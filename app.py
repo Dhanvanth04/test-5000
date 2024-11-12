@@ -8,20 +8,10 @@ app = Flask(__name__)
 
 @app.route('/htop')
 def htop():
-    # Full Name
-    full_name = "Your Full Name"  # Replace with your actual full name
-
-    # System Username
+    full_name = "Dhanvanth" 
     username = os.getlogin()
-
-    # Server Time in IST
     ist = pytz.timezone('Asia/Kolkata')
     server_time = datetime.now(ist).strftime('%Y-%m-%d %H:%M:%S')
-
-    # Top output
-    top_output = subprocess.getoutput("top -b -n 1")  # Get the `top` command output
-
-    # HTML Template to render the data
     html = f"""
     <html>
     <head><title>Htop Endpoint</title></head>
